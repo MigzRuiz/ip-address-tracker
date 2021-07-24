@@ -1,0 +1,86 @@
+@use '../util/' as *;
+
+.app {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 1.5rem;
+
+  & > * {
+    margin-bottom: 1.5rem;
+  }
+
+  .title {
+    align-self: center;
+    font-size: 1.6rem;
+    margin-top: 0.3rem;
+    margin-bottom: 1.8rem;
+    // font-weight: 500;
+    color: var(--white);
+  }
+
+  .search {
+    position: relative;
+    border-radius: 1rem;
+    overflow: hidden;
+
+    &__box {
+      height: 3rem;
+      width: 100%;
+      padding: 1.8rem 1.5rem;
+      font-size: 1.2rem;
+    }
+
+    &__btn {
+      position: absolute;
+      right: 0;
+      height: 100%;
+      background-color: var(--black);
+      border: none;
+      width: 18%;
+      color: var(--white);
+      font-weight: 700;
+    }
+  }
+
+  .info {
+    padding: 1rem;
+    background: var(--white);
+    border-radius: 1.3rem;
+
+    &__wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      margin: 0.6rem;
+
+      & > * {
+        margin-bottom: 1rem;
+      }
+    }
+
+    &__label {
+      color: var(--l-gray);
+      font-weight: 700;
+      font-size: 0.6rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2rem;
+      margin-bottom: 0.5rem;
+    }
+    &__item {
+      color: var(--d-gray);
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+  }
+
+  .bg {
+    // background: linear-gradient(to left, white, skyblue);
+    position: absolute;
+    scale: 1.3;
+    z-index: -99;
+    top: -1.25rem;
+  }
+}
