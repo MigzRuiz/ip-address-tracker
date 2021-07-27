@@ -1,0 +1,1 @@
+{"version":3,"sources":["globals/fonts.scss","globals/fonts.css"],"names":[],"mappings":"AAAA,MACE,+BCCF","file":"globals/fonts.css","sourcesContent":[":root {\n  --font-rubik: \"Rubik\", sans-serif;\n}\n",":root {\n  --font-rubik: \"Rubik\", sans-serif;\n}"]}
