@@ -1,6 +1,0 @@
-<<<<<<< HEAD
-const searchInput=document.querySelector(".search__input"),searchBtn=document.querySelector(".search__btn"),ipEl=document.querySelector(".info__ip"),locationEl=document.querySelector(".info__location"),timezoneEl=document.querySelector(".info__timezone"),ispEl=document.querySelector(".info__isp");let inputIP;const api_url="https://geo.ipify.org/api/v1?";searchBtn.addEventListener("click",(t=>{t.preventDefault(),inputIP=searchInput.value,console.log(inputIP),getIPData(inputIP)})),console.log(api);const getIPData=function(t,e){fetch(`https://geo.ipify.org/api/v1?apiKey=${e}&ipAddress=${t}`).then((t=>t.json())).then((t=>{console.log(t),ipEl.textContent=t.ip,locationEl.textContent=`${t.location.city}, ${t.location.country} ${t.location.postalCode}`,timezoneEl.textContent=t.location.timezone,ispEl.textContent=t.isp}))};
-=======
-app.global={init:function(){console.log("load global functions"),app.global.loadHeader()},loadHeader:function(){console.log("loadHeader()")}},app.global.init(),console.log("Load script.js");var app={};
->>>>>>> parent of 339b1a4 (Merge pull request #1 from MigzRuiz/react)
-//# sourceMappingURL=all.js.map
