@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
     Goals:
     1. The user must be able to type and enter the desired IP address.
@@ -40,3 +41,9 @@ const getIPData = function (ip, api) {
       ispEl.textContent = data.isp;
     });
 };
+=======
+console.log("Load script.js");
+
+// Instantiating the global app object
+var app = {};
+>>>>>>> parent of 339b1a4 (Merge pull request #1 from MigzRuiz/react)

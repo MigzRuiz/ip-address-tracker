@@ -23,16 +23,26 @@
 
   .search {
     position: relative;
+<<<<<<< HEAD
     border-radius: 1.3rem;
     overflow: hidden;
 
     &__input {
+=======
+    border-radius: 1rem;
+    overflow: hidden;
+
+    &__box {
+>>>>>>> parent of 339b1a4 (Merge pull request #1 from MigzRuiz/react)
       height: 3rem;
       width: 100%;
       padding: 1.8rem 1.5rem;
       font-size: 1.2rem;
+<<<<<<< HEAD
       border-radius: 1.3rem;
       border: none;
+=======
+>>>>>>> parent of 339b1a4 (Merge pull request #1 from MigzRuiz/react)
     }
 
     &__btn {
@@ -82,6 +92,10 @@
 
 .background {
   &__img {
+<<<<<<< HEAD
+=======
+    border: 1px solid magenta;
+>>>>>>> parent of 339b1a4 (Merge pull request #1 from MigzRuiz/react)
     position: absolute;
     z-index: -99;
 

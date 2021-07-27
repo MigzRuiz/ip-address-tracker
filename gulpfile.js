@@ -1,4 +1,5 @@
 // Initialize modules
+<<<<<<< HEAD
 // Importing specific gulp API functions lets us write them below as series() instead of gulp.series()
 const { src, dest, watch, series, parallel } = require("gulp");
 // Importing all the Gulp-related packages we want to use
@@ -35,10 +36,37 @@ function jsTask() {
     { sourcemaps: true }
   )
     .pipe(concat("all.js"))
+=======
+const { src, dest, watch, series } = require("gulp");
+const sass = require("gulp-sass")(require("sass"));
+const postcss = require("gulp-postcss");
+const autoprefixer = require("autoprefixer");
+const cssnano = require("cssnano");
+const babel = require("gulp-babel");
+const terser = require("gulp-terser");
+const browsersync = require("browser-sync").create();
+
+// Use dart-sass for @use
+//sass.compiler = require("dart-sass");
+
+// Sass Task
+function scssTask() {
+  return src("app/scss/style.scss", { sourcemaps: true })
+    .pipe(sass())
+    .pipe(postcss([autoprefixer(), cssnano()]))
+    .pipe(dest("dist", { sourcemaps: "." }));
+}
+
+// JavaScript Task
+function jsTask() {
+  return src("app/js/script.js", { sourcemaps: true })
+    .pipe(babel({ presets: ["@babel/preset-env"] }))
+>>>>>>> parent of 339b1a4 (Merge pull request #1 from MigzRuiz/react)
     .pipe(terser())
     .pipe(dest("dist", { sourcemaps: "." }));
 }
 
+<<<<<<< HEAD
 // Cachebust
 function cacheBustTask() {
   var cbString = new Date().getTime();
@@ -50,6 +78,10 @@ function cacheBustTask() {
 // Browsersync to spin up a local server
 function browserSyncServe(cb) {
   // initializes browsersync server
+=======
+// Browsersync
+function browserSyncServe(cb) {
+>>>>>>> parent of 339b1a4 (Merge pull request #1 from MigzRuiz/react)
   browsersync.init({
     server: {
       baseDir: ".",
@@ -64,11 +96,15 @@ function browserSyncServe(cb) {
   cb();
 }
 function browserSyncReload(cb) {
+<<<<<<< HEAD
   // reloads browsersync server
+=======
+>>>>>>> parent of 339b1a4 (Merge pull request #1 from MigzRuiz/react)
   browsersync.reload();
   cb();
 }
 
+<<<<<<< HEAD
 // Watch task: watch SCSS and JS files for changes
 // If any change, run scss and js tasks simultaneously
 function watchTask() {
@@ -104,3 +140,16 @@ exports.bs = series(
   browserSyncServe,
   bsWatchTask
 );
+=======
+// Watch Task
+function watchTask() {
+  watch("*.html", browserSyncReload);
+  watch(
+    ["app/scss/**/*.scss", "app/**/*.js"],
+    series(scssTask, jsTask, browserSyncReload)
+  );
+}
+
+// Default Gulp Task
+exports.default = series(scssTask, jsTask, browserSyncServe, watchTask);
+>>>>>>> parent of 339b1a4 (Merge pull request #1 from MigzRuiz/react)
