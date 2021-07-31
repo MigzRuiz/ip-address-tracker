@@ -1,18 +1,18 @@
 .homepage {
   position: relative;
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 1.5rem;
 
-  .wrapper {
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    padding: 1.5rem;
-
-    .title {
-      align-self: center;
-      color: white;
-    }
+  .title {
+    align-self: center;
+    color: white;
   }
 }
+
 .background {
   &__img {
     position: absolute;
