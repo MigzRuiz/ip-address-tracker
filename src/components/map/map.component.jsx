@@ -1,24 +1,31 @@
-import React, { Component } from "react";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import React from "react";
 
-import "./map.style.scss";
+import { MapContainer, Marker, Popup, TileLayer, useMap } from "react-leaflet";
 
-class Map extends Component {
-  render() {
-    return (
-      <MapContainer center={this.props.data} zoom={13} scrollWheelZoom={true}>
-        <TileLayer
-          attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        />
-        <Marker position={this.props.data}>
-          <Popup>
-            A pretty CSS3 popup. <br /> Easily customizable.
-          </Popup>
-        </Marker>
-      </MapContainer>
-    );
-  }
+function SetViewOnClick({ coords }) {
+  const map = useMap();
+  map.setView(coords);
+  return null;
 }
+
+const Map = ({ data }) => {
+  return (
+    <MapContainer
+      center={[data.lat, data.lng]}
+      zoom={13}
+      scrollWheelZoom={false}
+      zoomControl={false}
+    >
+      <TileLayer
+        attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+      ></TileLayer>
+      <Marker position={[data.lat, data.lng]}>
+        <Popup>{"Location"}</Popup>
+      </Marker>
+      <SetViewOnClick coords={[data.lat, data.lng]} />
+    </MapContainer>
+  );
+};
 
 export default Map;

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+// import MapComp from "../../components/map/map.component";
 import Map from "../../components/map/map.component";
 import OutputBox from "../../components/output-box/output-box.component";
 import SearchBar from "../../components/search-bar/search-bar.component";
@@ -56,8 +57,9 @@ class HomePage extends Component {
       <div className="homepage">
         <div className="background">
           <div className="background__img"></div>
-          <Map data={this.state}></Map>
+          <Map data={this.state} />
         </div>
+
         <div className="wrapper">
           <h1 className="title"> IP Address Tracker</h1>
           <SearchBar
