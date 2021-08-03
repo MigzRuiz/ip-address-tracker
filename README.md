@@ -57,7 +57,7 @@ Mobile View
 
 ### What I learned
 
-I learned a lot on this project. I've learned to build a react app from scratch. I've also reinforced my knowledge in JS and React JS.
+I learned a lot on this project. I've learned to build a react app from scratch. I've also reinforced my knowledge in JS and React JS. I had some issues with the leaflet js react because of their documentation. 
 
 ### Continued development
 
